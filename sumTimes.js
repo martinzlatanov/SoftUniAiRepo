@@ -1,18 +1,18 @@
 function sumTimes(hours, minutes, seconds, addMinutes) {
-  // Convert current time to total minutes
-  let totalMinutes = hours * 60 + minutes;
-  
-  // Add the additional minutes
-  totalMinutes += addMinutes;
-  
-  // Convert back to hours and minutes, handling overflow
-  let resultHours = Math.floor(totalMinutes / 60) % 24; // % 24 to handle 24-hour format
-  let resultMinutes = totalMinutes % 60;
-  
+  // Convert current time to total seconds
+  let totalSeconds = hours * 3600 + minutes * 60 + seconds;
+
+  // Add the additional minutes (converted to seconds)
+  totalSeconds += addMinutes * 60;
+
+  // Convert back to hours, minutes, and seconds, handling overflow
+  let resultHours = Math.floor(totalSeconds / 3600) % 24; // % 24 to handle 24-hour format
+  let resultMinutes = Math.floor((totalSeconds % 3600) / 60);
+
   // Format as hh:mm
   const formattedHours = String(resultHours).padStart(2, '0');
   const formattedMinutes = String(resultMinutes).padStart(2, '0');
-  
+
   return `${formattedHours}:${formattedMinutes}`;
 }
 

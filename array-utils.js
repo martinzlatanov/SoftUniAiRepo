@@ -3,7 +3,6 @@
  * Each function returns undefined when there are no numeric values.
  */
 
-let data = []
 
 function sum(arr) {
     if (arr.length === 0) return undefined;
@@ -22,7 +21,7 @@ function max(arr) {
 
 function avg(arr) {
     if (arr.length === 0) return 0;
+    if (arr.length === 0) return undefined;
     return sum(arr) / arr.length;
-}
 
 module.exports = { sum, min, max, avg };

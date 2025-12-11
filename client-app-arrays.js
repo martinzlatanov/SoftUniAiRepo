@@ -1,4 +1,4 @@
-import * as arrUtils from './array-utils.js'
+const arrUtils = require('./array-utils.js');
 const numbers = [10, 5, 8, 3, 15];
 
 console.log("Numbers:", numbers);
@@ -15,3 +15,4 @@ let numsBigInt = [10n, 20n, 30n];
 console.log("BigInt Numbers:", numsBigInt);
 console.log("Sum of BigInt Numbers:", sum(numsBigInt));
 const emptyArray = [];
+console.log("Sum of empty array:", sum(emptyArray));
